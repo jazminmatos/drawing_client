@@ -5,11 +5,27 @@ const canvas = document.getElementById('canvas');
 // which represents a 2d rendering context
 const ctx = canvas.getContext("2d");
 
-let rectangle = ctx.fillRect(800, 27, 100, 100)
-function moveRectangle(e) {
-    let rectangle = ctx.fillRect(600, 27, 100, 100)
+//let rectangle = ctx.fillRect(800, 27, 100, 100)
+
+// canvas.addEventListener("click", function(e) {
+//     let x = e.clientX
+//     let y = e.clientY
+//     let rectangle = ctx.fillRect(x, y, 100, 100)
+//     debugger
+//     return rectangle
+// })
+
+// create a circle class
+class Circle {
+    constructor() {
+
+    }
 }
-canvas.addEventListener("click", moveRectangle)
+
+
+
+
+
 
 
 // local variables
