@@ -9,8 +9,8 @@ class Circle {
     // input will be ctx, defined in index.js
     draw(context) {
         // creates a new path
-        context.beginPath();
         // creates the circle
+        context.beginPath();
         context.arc(this.xpos, this.ypos, this.radius, 0, Math.PI*2, false);
         // outlines the current or given path w/ current stroke style
         context.stroke(); 
