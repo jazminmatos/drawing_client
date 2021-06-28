@@ -18,6 +18,8 @@ class Circle {
     }
 }
 
+//Buttons
+const circleButton = document.getElementById('circle-button');
 
 circleButton.addEventListener("click", function(e) {
     // Allows user to click and have a circle appear

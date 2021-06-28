@@ -8,14 +8,14 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 // Buttons
-const lineButton = document.querySelector("#line-button").innerHTML
-const circleButton = document.getElementById('circle-button');
 const saveButton = document.getElementById('save-button');
-// clears canvas
-const clearButton = document.getElementById('clear-button');
 
 // Local variables
 let drawing = false;
+
+let canvasBounds = canvas.getBoundingClientRect();
+let rectLeft = canvasBounds.left;
+let rectTop = canvasBounds.top;
 
 // EventListeners
 // When circleButton clicked, user can draw w/ circles

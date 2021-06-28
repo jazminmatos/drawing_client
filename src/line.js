@@ -44,23 +44,21 @@ class Line {
 // let line = new Line(100, 200)
 // line.draw(ctx)
 
+// Buttons
+// Had to store buttons here, otherwise Uncaught ReferenceError if put in index.js
+const lineButton = document.querySelector("#line-button")
+// clears canvas
+const clearButton = document.getElementById('clear-button');
+
 lineButton.addEventListener("click", function(e) {
     canvas.addEventListener("mousedown", function(e) {
         drawing = true
-        let canvasBounds = canvas.getBoundingClientRect();
-        let rectLeft = canvasBounds.left;
-        let rectTop = canvasBounds.top;
-        
         let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
         line.draw(ctx);
     })
     
     canvas.addEventListener("mousemove", function(e) {
         if (!drawing) return;
-        let canvasBounds = canvas.getBoundingClientRect();
-        let rectLeft = canvasBounds.left;
-        let rectTop = canvasBounds.top;
-        
         let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
         line.draw(ctx);
     })
