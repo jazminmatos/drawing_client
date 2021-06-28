@@ -16,9 +16,20 @@ class Drawing {
         this.image = image
     }
 
-    // function to know whether or not drawing = true or false
+    // function that tells me I am drawing
+    // isDrawing() {
+        // drawing = true;
+    // }
 
-    // function to draw
+    // function that tells me I am NOT drawing
+    // isNotDrawing() {
+        // drawing = false;
+    // }
+
+    // function to be able to draw
+    // draw(e) {
+    
+    // }
 }
 
 // REMINDER: 4 diff types of class methods
@@ -26,3 +37,4 @@ class Drawing {
 // 2. static (class-level) methods
 // 3. getter methods
 // 4. setter methods
+// All functions that I need will need to be instance methods...I think
