@@ -41,7 +41,15 @@ class Drawing {
     // function to convert Drawing instance into image using canvas.toDataURL()
 }
 
-// E
+// EventListeners
+// // when mouse is clicked, drawing = true
+// canvas.addEventListener("mousedown", isDrawing)
+
+// // when mouse is NOT clicked, drawing = false
+// canvas.addEventListener("mouseup", isNOTDrawing)
+
+// // when mouse is moving, call draw method
+// canvas.addEventListener("mousemove", draw)
 
 // REMINDER: 4 diff types of class methods
 // 1. standard instance methods
