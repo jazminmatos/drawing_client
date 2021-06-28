@@ -9,10 +9,10 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 // Buttons
-const lineButton = document.querySelector("body > main > section > div.dashboard > button:nth-child(1)")
-const circleButton = document.querySelector("body > main > section > div.dashboard > button:nth-child(2)");
-const triangleButton = 
-const squareButton = 
+const lineButton = document.getElementById('line-button')
+const circleButton = document.getElementById('circle-button');
+const triangleButton = document.getElementById('triangle-button')
+const squareButton = document.getElementById('square-button')
 
 // local variables
 let drawing = false;
