@@ -6,12 +6,12 @@
 }
 
 h3 {
-  font-family: "ABeeZee", sans-serif;
   opacity: 0.8;
   color: #2a2829;
 }
 
 main {
+  font-family: "ABeeZee", sans-serif;
   /* takes up full space of monitor */
   min-height: 100vh;
   background: linear-gradient(to right top, #fee5ff, #fe8aea);
