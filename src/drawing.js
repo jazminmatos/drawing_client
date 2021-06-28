@@ -6,6 +6,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext("2d");
 
 // Resizing
+// Allows canvas size to be it's container's size
 const drawingBoard = document.getElementsByClassName('drawing-board')
 canvas.height = drawingBoard[0].offsetHeight
 canvas.width = drawingBoard[0].offsetWidth
@@ -21,7 +22,7 @@ canvas.width = drawingBoard[0].offsetWidth
 // })
 
 // create a circle class
-// maybe this can be a type of pen???
+// maybe this can be a type of pen that can be toggled w/ a button???
 class Circle {
     constructor(xpos, ypos, radius, color) {
         this.xpos = xpos;

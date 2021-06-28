@@ -71,7 +71,7 @@ main {
 }
 
 .dashboard {
-  flex: 1;
+  flex: 0.3;
 }
 
 .dashboard,
@@ -98,4 +98,5 @@ main {
 #canvas {
   border: 2px solid black;
   overflow: auto;
+  border-radius: 2rem;
 }
