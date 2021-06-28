@@ -69,22 +69,20 @@ class Drawing {
         // drawing = true;
     // }
 
-    // function that tells me I am NOT drawing
-    // isNotDrawing() {
-        // drawing = false;
-    // }
-
     // function to be able to draw
     // draw(e) {
-        // if (!drawing) return;
+        // if (!isDrawing) return;
         // ctx.lineWidth = 10;
         // ctx.lineCap = "round"
 
         // ctx.lineTo(e.clientX, e.clientY);
+        // what allows us to draw a line
         // ctx.stroke();
         // ctx.beginPath();
         // ctx.moveTo(e.clientX, e.clientY);
     // }
+
+    // function to clear the canvas
 
     // function to convert Drawing instance into image using canvas.toDataURL()
 }
