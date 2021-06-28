@@ -55,13 +55,28 @@ circleButton.addEventListener("click", function(e) {
 // let line = new Line(100, 200)
 // line.draw(ctx)
 lineButton.addEventListener("click", function(e) {
-    canvas.addEventListener("mousemove", function(e) {
+    canvas.addEventListener("mousedown", function(e) {
+        drawing = true
         let canvasBounds = canvas.getBoundingClientRect();
         let rectLeft = canvasBounds.left;
-        let rectTop = canvasBounds.top
+        let rectTop = canvasBounds.top;
         
-        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop)
-        line.draw(ctx)
+        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
+        line.draw(ctx);
+    })
+    
+    canvas.addEventListener("mousemove", function(e) {
+        if (!drawing) return;
+        let canvasBounds = canvas.getBoundingClientRect();
+        let rectLeft = canvasBounds.left;
+        let rectTop = canvasBounds.top;
+        
+        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
+        line.draw(ctx);
+    })
+
+    canvas.addEventListener("mouseup", function(e) {
+        drawing = false
     })
 })
 
