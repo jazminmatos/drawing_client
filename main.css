@@ -8,7 +8,7 @@
 main {
   /* takes up full space of monitor */
   min-height: 100vh;
-  background: linear-gradient(to right top, #fee5ff, #fcc1fe);
+  background: linear-gradient(to right top, #fee5ff, #fe8aea);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,8 +37,8 @@ main {
   background: white;
   background: linear-gradient(
     to right bottom,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.5)
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
   );
   height: 20rem;
   width: 20rem;
