@@ -11,8 +11,13 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
+
+
 // Retrieve position of canvas
+// returns DOMRect object w/ info about the size of an element & its position relative to the viewport
 const canvasBounds = canvas.getBoundingClientRect();
+const rectLeft = canvasBounds.left;
+const rectTop = canvasBounds.top
 
 //let rectangle = ctx.fillRect(800, 27, 100, 100)
 
@@ -45,14 +50,17 @@ class Circle {
     }
 }
 
+// Allows user to click and have a circle appear
+// HOWEVER, if user resizes the viewport, mouseposition vs circle position changes...
 canvas.addEventListener("mousedown", function(e) {
-    let newCircle = new Circle(e.clientX - canvasBounds.left, e.clientY - canvasBounds.top, 50, "red");
+    let newCircle = new Circle(e.clientX - rectLeft, e.clientY - rectTop, 50, "red");
     newCircle.draw(ctx)    
 })
 
 // An example of a permanent static circle:
 // let circle = new Circle(100, 100, 50, "black");
-circle.draw(ctx)
+// Need to call draw in order for it to show up
+//circle.draw(ctx)
 
 // figure out mouse/circle position issue
 // try to implement new eventlisteners:
