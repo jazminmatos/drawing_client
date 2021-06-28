@@ -21,6 +21,7 @@ canvas.width = drawingBoard[0].offsetWidth
 // })
 
 // create a circle class
+// maybe this can be a type of pen???
 class Circle {
     constructor(xpos, ypos, radius, color) {
         this.xpos = xpos;
@@ -46,6 +47,11 @@ canvas.addEventListener("mousedown", function(e) {
 })
 let circle = new Circle(100, 100, 50, "black");
 circle.draw(ctx)
+
+// figure out mouse/circle position issue
+// try to implement new eventlisteners:
+    // drawing circle after clicking mouse and keep drawing while dragging it
+    // once I've stopped clicking, stop drawing
 
 
 
