@@ -11,7 +11,9 @@ canvas.width = drawingBoard[0].offsetWidth;
 const lineButton = document.getElementById('line-button')
 const circleButton = document.getElementById('circle-button');
 const triangleButton = document.getElementById('triangle-button')
-const squareButton = document.getElementById('square-button')
+const squareButton = document.getElementById('square-button');
+// clears canvas
+const clearButton = document.getElementById('clear-button');
 
 // Local variables
 let drawing = false;
