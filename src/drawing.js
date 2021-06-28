@@ -10,3 +10,9 @@ ctx.fillRect(800, 27, 100, 100)
 // local variables
 let drawing = false;
 
+class Drawing {
+    // do I need user_id or is that relationship created using the backend only?
+    constructor(image) {
+        this.image = image
+    }
+}
