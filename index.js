@@ -77,6 +77,7 @@ lineButton.addEventListener("click", function(e) {
 
     canvas.addEventListener("mouseup", function(e) {
         drawing = false
+        ctx.beginPath()
     })
 })
 

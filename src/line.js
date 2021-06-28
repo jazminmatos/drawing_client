@@ -10,5 +10,7 @@ class Line {
         
         context.lineTo(this.xpos, this.ypos);
         context.stroke();
+        context.beginPath()
+        context.moveTo(this.xpos, this.ypos);
     }
 }
