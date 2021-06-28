@@ -50,5 +50,20 @@ circleButton.addEventListener("click", function(e) {
     })
 })
 
+// When lineButton clicked, user can draw w/ lines
+// An example of a permanent 'line' (looks like a dot):
+// let line = new Line(100, 200)
+// line.draw(ctx)
+lineButton.addEventListener("click", function(e) {
+    canvas.addEventListener("mousemove", function(e) {
+        let canvasBounds = canvas.getBoundingClientRect();
+        let rectLeft = canvasBounds.left;
+        let rectTop = canvasBounds.top
+        
+        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop)
+        line.draw(ctx)
+    })
+})
+
 
 // Fetch Requests

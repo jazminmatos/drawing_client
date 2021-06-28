@@ -6,6 +6,7 @@ class Circle {
         this.color = color;
     }
 
+    // input will be ctx, defined in index.js
     draw(context) {
         // creates a new path
         context.beginPath();

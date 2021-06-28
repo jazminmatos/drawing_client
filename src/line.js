@@ -5,8 +5,13 @@ class Line {
     }
 
     draw(context) {
+        context.lineWidth = 10;
+        context.lineCap = "round";
+        
         context.beginPath();
-        context.lineTo()
+        context.lineTo(this.xpos, this.ypos);
+        context.moveTo(this.xpos, this.ypos);
+        context.stroke();
+        context.closePath();
     }
 }
-
