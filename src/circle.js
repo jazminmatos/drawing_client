@@ -1,12 +1,3 @@
-
-
-// An example of a permanent static circle:
-// let circle = new Circle(100, 100, 50, "black");
-// Need to call draw in order for it to show up
-//circle.draw(ctx)
-
-// create a circle class
-// maybe this can be a type of pen that can be toggled w/ a button???
 class Circle {
     constructor(xpos, ypos, radius, color) {
         this.xpos = xpos;
@@ -26,7 +17,10 @@ class Circle {
     }
 }
 
-
+// An example of a permanent static circle:
+// let circle = new Circle(100, 100, 50, "black");
+// Need to call draw in order for it to show up
+//circle.draw(ctx)
 
 // ----------------------------------------------------------------------------------------------------
 

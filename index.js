@@ -1,10 +1,4 @@
-// Any global variables that I want to share across all files
-
-// Any initializations of the application
-// Example: reading or fetching data upon initialization
-
-
-// Global variables, move to index.js?
+// Global variables
 const canvas = document.getElementById('canvas');
 // leads to creation of a CanvasRenderingContext2d object
 // which represents a 2d rendering context
@@ -19,9 +13,8 @@ const circleButton = document.getElementById('circle-button');
 const triangleButton = document.getElementById('triangle-button')
 const squareButton = document.getElementById('square-button')
 
-// local variables
+// Local variables
 let drawing = false;
-
 
 // EventListeners
 // When circleButton clicked, user can draw w/ circles
@@ -56,3 +49,6 @@ circleButton.addEventListener("click", function(e) {
         drawing = false
     })
 })
+
+
+// Fetch Requests

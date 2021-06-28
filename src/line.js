@@ -4,5 +4,9 @@ class Line {
         this.ypos = ypos
     }
 
-    
+    draw(context) {
+        context.beginPath();
+        context.lineTo()
+    }
 }
+
