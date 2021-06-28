@@ -26,14 +26,23 @@ class Circle {
 
     draw(context) {
         // creates a new path
-        context.beginPath()
-        context.arc(this.xpos, this.ypos, this.radius, 0, Math.PI*2, false)
+        context.beginPath();
+        // creates the circle
+        context.arc(this.xpos, this.ypos, this.radius, 0, Math.PI*2, false);
+        // outlines the current or given path w/ current stroke style
         context.stroke(); 
+        context.closePath();
     }
 }
 
+canvas.addEventListener("mousedown", function(e) {
+    let newCircle = new Circle(e.clientX, e.clientY, 50, "red");
+    newCircle.draw(ctx)    
+})
 let circle = new Circle(100, 100, 50, "black");
 circle.draw(ctx)
+
+
 
 
 
