@@ -5,6 +5,11 @@ const canvas = document.getElementById('canvas');
 // which represents a 2d rendering context
 const ctx = canvas.getContext("2d");
 
+// Resizing
+const drawingBoard = document.getElementsByClassName('drawing-board')
+canvas.height = drawingBoard[0].offsetHeight
+canvas.width = drawingBoard[0].offsetWidth
+
 //let rectangle = ctx.fillRect(800, 27, 100, 100)
 
 // canvas.addEventListener("click", function(e) {
@@ -36,7 +41,7 @@ class Circle {
 }
 
 canvas.addEventListener("mousedown", function(e) {
-    let newCircle = new Circle(e.clientX, e.clientY, 50, "red");
+    let newCircle = new Circle(e.clientX - this.offsetLeft, e.clientY - this.offsetTop, 50, "red");
     newCircle.draw(ctx)    
 })
 let circle = new Circle(100, 100, 50, "black");
