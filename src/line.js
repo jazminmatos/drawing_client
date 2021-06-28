@@ -8,10 +8,7 @@ class Line {
         context.lineWidth = 10;
         context.lineCap = "round";
         
-        context.beginPath();
         context.lineTo(this.xpos, this.ypos);
-        context.moveTo(this.xpos, this.ypos);
         context.stroke();
-        context.closePath();
     }
 }
