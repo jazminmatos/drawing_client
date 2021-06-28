@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+h3 {
+  font-family: "ABeeZee", sans-serif;
+  opacity: 0.8;
+  color: #2a2829;
+}
+
 main {
   /* takes up full space of monitor */
   min-height: 100vh;
