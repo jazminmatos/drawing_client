@@ -46,10 +46,12 @@ class Circle {
 }
 
 canvas.addEventListener("mousedown", function(e) {
-    let newCircle = new Circle(e.pageX - canvasBounds.left, e.pageY - canvasBounds.top, 50, "red");
+    let newCircle = new Circle(e.clientX - canvasBounds.left, e.clientY - canvasBounds.top, 50, "red");
     newCircle.draw(ctx)    
 })
-let circle = new Circle(100, 100, 50, "black");
+
+// An example of a permanent static circle:
+// let circle = new Circle(100, 100, 50, "black");
 circle.draw(ctx)
 
 // figure out mouse/circle position issue
