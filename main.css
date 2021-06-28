@@ -22,8 +22,8 @@ main {
 
 .glass {
   background: white;
-  min-height: 80vh;
-  width: 75%;
+  min-height: 90vh;
+  width: 85%;
   /* 4th argument is opacity */
   background: linear-gradient(
     to right bottom,
@@ -40,7 +40,8 @@ main {
 }
 
 .shape1,
-.shape2 {
+.shape2,
+.shape3 {
   background: white;
   background: linear-gradient(
     to right bottom,
@@ -54,13 +55,19 @@ main {
 }
 
 .shape1 {
-  top: 2%;
-  right: 7%;
+  top: -1%;
+  right: 1%;
 }
 
 .shape2 {
-  bottom: 2%;
-  left: 7%;
+  bottom: -4%;
+  left: 1%;
+}
+
+.shape3 {
+  bottom: 50%;
+  left: 50%;
+  background: #ee3d96;
 }
 
 .dashboard {
