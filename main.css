@@ -30,6 +30,7 @@ main {
   z-index: 2;
   /* blurs the image for that cool glass effect :):):) */
   backdrop-filter: blur(2rem);
+  display: flex;
 }
 
 .shape1,
@@ -54,4 +55,10 @@ main {
 .shape2 {
   bottom: 5%;
   left: 10%;
+}
+
+.dashboard {
+}
+
+.drawing-board {
 }
