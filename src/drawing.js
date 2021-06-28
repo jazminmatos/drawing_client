@@ -15,4 +15,14 @@ class Drawing {
     constructor(image) {
         this.image = image
     }
+
+    // function to know whether or not drawing = true or false
+
+    // function to draw
 }
+
+// REMINDER: 4 diff types of class methods
+// 1. standard instance methods
+// 2. static (class-level) methods
+// 3. getter methods
+// 4. setter methods
