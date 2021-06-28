@@ -11,6 +11,9 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
+// local variables
+let drawing = false;
+
 // An example of a permanent static circle:
 // let circle = new Circle(100, 100, 50, "black");
 // Need to call draw in order for it to show up
@@ -40,6 +43,7 @@ class Circle {
 // Allows user to click and have a circle appear
 // HOWEVER, if user resizes the viewport, mouseposition vs circle position changes...
 canvas.addEventListener("mousedown", function(e) {
+    drawing = true
     // Retrieve position of canvas
     // returns DOMRect object w/ info about the size of an element & its position relative to the viewport
     // Had to move this inside this eventListener b/c as global variables, whenever viewport = resized, mouseposition/circle changed
@@ -51,7 +55,9 @@ canvas.addEventListener("mousedown", function(e) {
     newCircle.draw(ctx)    
 })
 
+// maybe I need to first check whether I have clicked i.e. drawing = true 
 canvas.addEventListener("mousemove", function(e) {
+    if (!drawing) return;
     let canvasBounds = canvas.getBoundingClientRect();
     let rectLeft = canvasBounds.left;
     let rectTop = canvasBounds.top
@@ -59,6 +65,8 @@ canvas.addEventListener("mousemove", function(e) {
     let newCircle = new Circle(e.clientX - rectLeft, e.clientY - rectTop, 50, "red");
     newCircle.draw(ctx)  
 })
+
+canvas.addEventListener()
 
 
 
@@ -70,14 +78,6 @@ canvas.addEventListener("mousemove", function(e) {
 
 
 
-
-
-
-
-
-
-// local variables
-let drawing = false;
 
 class Drawing {
     // do I need user_id or is that relationship created using the backend only?
