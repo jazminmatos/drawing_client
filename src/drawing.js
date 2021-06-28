@@ -1,9 +1,11 @@
 // Global variables, move to index.js?
 
-const canvas = document.querySelector("#canvas");
+const canvas = document.getElementById('canvas');
 // leads to creation of a CanvasRenderingContext2d object
 // which represents a 2d rendering context
 const ctx = canvas.getContext("2d");
+
+ctx.fillRect(0, 1, 100, 100)
 
 // local variables
 let drawing = false;
@@ -33,5 +35,3 @@ canvas.addEventListener('mousedown', startPosition)
 // whenever we put mouseup, painting = false
 canvas.addEventListener('mouseup', endPosition)
 canvas.addEventListener('mousemove', draw)
-
-}
