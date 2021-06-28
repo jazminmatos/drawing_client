@@ -65,15 +65,17 @@ lineButton.addEventListener("click", function(e) {
         line.draw(ctx);
     })
     
-    canvas.addEventListener("mousemove", function(e) {
-        if (!drawing) return;
-        let canvasBounds = canvas.getBoundingClientRect();
-        let rectLeft = canvasBounds.left;
-        let rectTop = canvasBounds.top;
+    // canvas.addEventListener("mousemove", function(e) {
+    //     if (!drawing) return;
+    //     let canvasBounds = canvas.getBoundingClientRect();
+    //     let rectLeft = canvasBounds.left;
+    //     let rectTop = canvasBounds.top;
         
-        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
-        line.draw(ctx);
-    })
+    //     let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
+    //     line.draw(ctx);
+    // })
+
+    canvas.addEventListener("mousemove", draw)
 
     canvas.addEventListener("mouseup", function(e) {
         drawing = false
