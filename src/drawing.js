@@ -79,11 +79,6 @@ circleButton.addEventListener("click", function(e) {
 })
 
 
-// figure out mouse/circle position issue
-// try to implement new eventlisteners:
-    // drawing circle after clicking mouse and keep drawing while dragging it
-    // once I've stopped clicking, stop drawing
-
 
 
 
