@@ -87,3 +87,7 @@ main {
 .drawing-board {
   flex: 2;
 }
+
+#canvas {
+  border: 2px solid black;
+}
