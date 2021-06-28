@@ -17,7 +17,14 @@ const ctx = canvas.getContext("2d");
 
 // create a circle class
 class Circle {
-    constructor() {
+    constructor(xpos, ypos, radius, color) {
+        this.xpos = xpos
+        this.ypos = ypos
+        this.radius = radius
+        this.color = color
+    }
+
+    draw() {
 
     }
 }
