@@ -83,5 +83,9 @@ lineButton.addEventListener("click", function(e) {
     })
 })
 
+clearButton.addEventListener("click", function(e) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+})
+
 
 // Fetch Requests
