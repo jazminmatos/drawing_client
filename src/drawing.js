@@ -7,9 +7,12 @@ const ctx = canvas.getContext("2d");
 
 // Resizing
 // Allows canvas size to be it's container's size
-const drawingBoard = document.getElementsByClassName('drawing-board')
-canvas.height = drawingBoard[0].offsetHeight
-canvas.width = drawingBoard[0].offsetWidth
+const drawingBoard = document.getElementsByClassName('drawing-board');
+canvas.height = drawingBoard[0].offsetHeight;
+canvas.width = drawingBoard[0].offsetWidth;
+
+// Retrieve position of canvas
+const canvasBounds = canvas.getBoundingClientRect();
 
 //let rectangle = ctx.fillRect(800, 27, 100, 100)
 
@@ -43,7 +46,7 @@ class Circle {
 }
 
 canvas.addEventListener("mousedown", function(e) {
-    let newCircle = new Circle(e.clientX - this.offsetLeft, e.clientY - this.offsetTop, 50, "red");
+    let newCircle = new Circle(e.pageX - canvasBounds.left, e.pageY - canvasBounds.top, 50, "red");
     newCircle.draw(ctx)    
 })
 let circle = new Circle(100, 100, 50, "black");
