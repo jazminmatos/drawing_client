@@ -5,7 +5,12 @@ const canvas = document.getElementById('canvas');
 // which represents a 2d rendering context
 const ctx = canvas.getContext("2d");
 
-ctx.fillRect(800, 27, 100, 100)
+let rectangle = ctx.fillRect(800, 27, 100, 100)
+function moveRectangle(e) {
+    let rectangle = ctx.fillRect(600, 27, 100, 100)
+}
+canvas.addEventListener("click", moveRectangle)
+
 
 // local variables
 let drawing = false;
@@ -57,3 +62,4 @@ class Drawing {
 // 3. getter methods
 // 4. setter methods
 // All functions that I need will need to be instance methods...I think
+
