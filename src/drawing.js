@@ -11,23 +11,10 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
-
-
-// Retrieve position of canvas
-// returns DOMRect object w/ info about the size of an element & its position relative to the viewport
-const canvasBounds = canvas.getBoundingClientRect();
-const rectLeft = canvasBounds.left;
-const rectTop = canvasBounds.top
-
-//let rectangle = ctx.fillRect(800, 27, 100, 100)
-
-// canvas.addEventListener("click", function(e) {
-//     let x = e.clientX
-//     let y = e.clientY
-//     let rectangle = ctx.fillRect(x, y, 100, 100)
-//     debugger
-//     return rectangle
-// })
+// An example of a permanent static circle:
+// let circle = new Circle(100, 100, 50, "black");
+// Need to call draw in order for it to show up
+//circle.draw(ctx)
 
 // create a circle class
 // maybe this can be a type of pen that can be toggled w/ a button???
@@ -53,14 +40,28 @@ class Circle {
 // Allows user to click and have a circle appear
 // HOWEVER, if user resizes the viewport, mouseposition vs circle position changes...
 canvas.addEventListener("mousedown", function(e) {
+    // Retrieve position of canvas
+    // returns DOMRect object w/ info about the size of an element & its position relative to the viewport
+    // Had to move this inside this eventListener b/c as global variables, whenever viewport = resized, mouseposition/circle changed
+    let canvasBounds = canvas.getBoundingClientRect();
+    let rectLeft = canvasBounds.left;
+    let rectTop = canvasBounds.top
+
     let newCircle = new Circle(e.clientX - rectLeft, e.clientY - rectTop, 50, "red");
     newCircle.draw(ctx)    
 })
 
-// An example of a permanent static circle:
-// let circle = new Circle(100, 100, 50, "black");
-// Need to call draw in order for it to show up
-//circle.draw(ctx)
+canvas.addEventListener("mousemove", function(e) {
+    let canvasBounds = canvas.getBoundingClientRect();
+    let rectLeft = canvasBounds.left;
+    let rectTop = canvasBounds.top
+
+    let newCircle = new Circle(e.clientX - rectLeft, e.clientY - rectTop, 50, "red");
+    newCircle.draw(ctx)  
+})
+
+
+
 
 // figure out mouse/circle position issue
 // try to implement new eventlisteners:
