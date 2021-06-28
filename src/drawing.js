@@ -18,16 +18,22 @@ const ctx = canvas.getContext("2d");
 // create a circle class
 class Circle {
     constructor(xpos, ypos, radius, color) {
-        this.xpos = xpos
-        this.ypos = ypos
-        this.radius = radius
-        this.color = color
+        this.xpos = xpos;
+        this.ypos = ypos;
+        this.radius = radius;
+        this.color = color;
     }
 
-    draw() {
-
+    draw(context) {
+        // creates a new path
+        context.beginPath()
+        context.arc(this.xpos, this.ypos, this.radius, 0, Math.PI*2, false)
+        context.stroke(); 
     }
 }
+
+let circle = new Circle(100, 100, 50, "black");
+circle.draw(ctx)
 
 
 
