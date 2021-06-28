@@ -28,9 +28,20 @@ class Drawing {
 
     // function to be able to draw
     // draw(e) {
-    
+        // if (!drawing) return;
+        // ctx.lineWidth = 10;
+        // ctx.lineCap = "round"
+
+        // ctx.lineTo(e.clientX, e.clientY);
+        // ctx.stroke();
+        // ctx.beginPath();
+        // ctx.moveTo(e.clientX, e.clientY);
     // }
+
+    // function to convert Drawing instance into image using canvas.toDataURL()
 }
+
+// E
 
 // REMINDER: 4 diff types of class methods
 // 1. standard instance methods
