@@ -4,14 +4,14 @@ class Line {
         this.ypos = ypos
     }
 
-    draw(context) {
-        context.lineWidth = 10;
-        context.lineCap = "round";
+    draw () {
+        ctx.lineWidth = 10;
+        ctx.lineCap = "round";
         
-        context.lineTo(this.xpos, this.ypos);
-        context.stroke();
-        context.beginPath()
-        context.moveTo(this.xpos, this.ypos);
+        ctx.lineTo(this.xpos, this.ypos);
+        ctx.stroke();
+        ctx.beginPath()
+        ctx.moveTo(this.xpos, this.ypos);
     }
 }
 
