@@ -1,16 +1,17 @@
 class Line {
     constructor(xpos, ypos) {
-        this.xpos = xpos
-        this.ypos = ypos
+        this.xpos = xpos;
+        this.ypos = ypos;
     }
 
     draw () {
-        ctx.lineWidth = 10;
+        ctx.lineWidth = strokeWeight.value;
         ctx.lineCap = "round";
+        ctx.strokeStyle = colorPicker.value;
         
         ctx.lineTo(this.xpos, this.ypos);
         ctx.stroke();
-        ctx.beginPath()
+        ctx.beginPath();
         ctx.moveTo(this.xpos, this.ypos);
     }
 }
@@ -23,13 +24,13 @@ class Line {
 
 // Buttons
 // Had to store buttons here, otherwise Uncaught ReferenceError if put in index.js
-const lineButton = document.querySelector("#line-button")
+const lineButton = document.querySelector("#line-button");
 // clears canvas
 const clearButton = document.getElementById('clear-button');
 
 lineButton.addEventListener("click", function(e) {
     canvas.addEventListener("mousedown", function(e) {
-        drawing = true
+        drawing = true;
         let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
         line.draw(ctx);
     })
@@ -41,8 +42,8 @@ lineButton.addEventListener("click", function(e) {
     })
 
     canvas.addEventListener("mouseup", function(e) {
-        drawing = false
-        ctx.beginPath()
+        drawing = false;
+        ctx.beginPath();
     })
 })
 

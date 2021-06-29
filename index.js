@@ -8,6 +8,10 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
+const colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
+const strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
+
+
 // Buttons
 const saveButton = document.getElementById('save-button');
 
