@@ -3,7 +3,6 @@ class Line {
     static drawing = false;
     static colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
     static strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
-
     
     constructor(xpos, ypos) {
         this.xpos = xpos;
@@ -40,13 +39,17 @@ const lineButton = document.querySelector("#line-button");
 lineButton.addEventListener("click", function(e) {
     canvas.addEventListener("mousedown", function(e) {
         Line.drawing = true;
-        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
+        let x = e.clientX - rectLeft;
+        let y = e.clientY - rectTop;
+        let line = new Line (x, y);
         line.draw(ctx);
     })
     
     canvas.addEventListener("mousemove", function(e) {
         if (!Line.drawing) return;
-        let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
+        let x = e.clientX - rectLeft;
+        let y = e.clientY - rectTop;
+        let line = new Line (x, y);
         line.draw(ctx);
     })
 
