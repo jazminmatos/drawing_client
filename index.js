@@ -1,17 +1,17 @@
 // Global variables
-const canvas = document.getElementById('canvas');
+// const canvas = document.getElementById('canvas');
 // leads to creation of a CanvasRenderingContext2d object
 // which represents a 2d rendering context
-const ctx = canvas.getContext("2d");
+const ctx = Line.canvas.getContext("2d");
 // Allows canvas size to be it's container's size
 const drawingBoard = document.getElementsByClassName('drawing-board');
 
 // Maybe I need to move this into an event listener that listens for window's size change
 // Maybe I'll need to save the below in a static method and then call that method in the event listener
-canvas.height = drawingBoard[0].offsetHeight;
-canvas.width = drawingBoard[0].offsetWidth;
+Line.canvas.height = drawingBoard[0].offsetHeight;
+Line.canvas.width = drawingBoard[0].offsetWidth;
 
-let canvasBounds = canvas.getBoundingClientRect();
+let canvasBounds = Line.canvas.getBoundingClientRect();
 let rectLeft = canvasBounds.left;
 let rectTop = canvasBounds.top;
 

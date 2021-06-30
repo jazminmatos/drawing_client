@@ -1,4 +1,6 @@
 class Line {
+    static canvas = document.getElementById('canvas');
+    
     static drawing = false;
     static colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
     static strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
@@ -23,7 +25,7 @@ class Line {
     }
 
     static clearDrawing() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, Line.canvas.width, Line.canvas.height);
     }
 }
 
@@ -38,7 +40,7 @@ class Line {
 
 
 Line.lineButton.addEventListener("click", function(e) {
-    canvas.addEventListener("mousedown", function(e) {
+    Line.canvas.addEventListener("mousedown", function(e) {
         Line.drawing = true;
         let x = e.clientX - rectLeft;
         let y = e.clientY - rectTop;
@@ -46,7 +48,7 @@ Line.lineButton.addEventListener("click", function(e) {
         line.draw(ctx);
     })
     
-    canvas.addEventListener("mousemove", function(e) {
+    Line.canvas.addEventListener("mousemove", function(e) {
         if (!Line.drawing) return;
         let x = e.clientX - rectLeft;
         let y = e.clientY - rectTop;
@@ -54,7 +56,7 @@ Line.lineButton.addEventListener("click", function(e) {
         line.draw(ctx);
     })
 
-    canvas.addEventListener("mouseup", function(e) {
+    Line.canvas.addEventListener("mouseup", function(e) {
         Line.drawing = false;
         ctx.beginPath();
     })
