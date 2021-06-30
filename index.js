@@ -11,6 +11,8 @@ canvas.width = drawingBoard[0].offsetWidth;
 const colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
 const strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
 
+const jsonImageURL = "http://localhost:8000/images"
+
 
 // Buttons
 const saveButton = document.getElementById('save-button');
@@ -23,3 +25,11 @@ let rectLeft = canvasBounds.left;
 let rectTop = canvasBounds.top;
 
 // Fetch Requests
+
+// Fetch (GET) from JSON file
+fetch(jsonImageURL) 
+
+// Fetch (GET) drawing from backend db
+
+// Fetch (POST) drawing (send to backend db)
+
