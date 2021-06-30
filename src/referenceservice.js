@@ -1,14 +1,6 @@
-class ReferenceService {
-    // remember objects
-    // Do I need this???
-    static all = []
-    
+class ReferenceService {   
     constructor (endpoint) {
         this.endpoint = endpoint
-
-        this.imgElement = document.createElement('img')
-
-        ReferenceService.all.push(this)
     }
 
     // Read/Index Action
