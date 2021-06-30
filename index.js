@@ -1,8 +1,7 @@
 // Global variables
-// const canvas = document.getElementById('canvas');
 // leads to creation of a CanvasRenderingContext2d object
 // which represents a 2d rendering context
-const ctx = Line.canvas.getContext("2d");
+//const ctx = Line.canvas.getContext("2d");
 // Allows canvas size to be it's container's size
 const drawingBoard = document.getElementsByClassName('drawing-board');
 
