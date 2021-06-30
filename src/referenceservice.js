@@ -8,10 +8,13 @@ class ReferenceService {
         fetch(`${this.endpoint}/images`)
             .then(resp => resp.json())
             .then(function(json) {
-            let keys = Object.keys(json);
-            let imageURL = json[keys[keys.length * Math.random() << 0]].image;
-            console.log(imageURL)
-            // use data inside of json to do DOM manipulation
+                let keys = Object.keys(json);
+                let imageItem = json[keys[keys.length * Math.random() << 0]];
+
+                const r = new Reference(imageItem)
+                r.putOnDom()
+                
+                console.log(r)
             })
     }    
 }
