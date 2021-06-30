@@ -24,14 +24,16 @@ randomImageButton.addEventListener ("click", e =>
     image.getImage()
 )
 // User class & UserService Class
-const base_rails_url = "http://127.0.0.1:3000"
-const userService = new UserService(base_rails_url);
+//const base_rails_url = "http://127.0.0.1:3000"
+//const userService = new UserService(base_rails_url);
 
 let drawing = false;
 
 let canvasBounds = canvas.getBoundingClientRect();
 let rectLeft = canvasBounds.left;
 let rectTop = canvasBounds.top;
+
+Line.clearButton.addEventListener("click", Line.clearDrawing)
 
 
 

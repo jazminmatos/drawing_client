@@ -1,10 +1,12 @@
 class Line {
+    static clearButton = document.getElementById('clear-button');
+    
     constructor(xpos, ypos) {
         this.xpos = xpos;
         this.ypos = ypos;
     }
 
-    draw () {
+    draw() {
         ctx.lineWidth = strokeWeight.value;
         ctx.lineCap = "round";
         ctx.strokeStyle = colorPicker.value;
@@ -13,6 +15,10 @@ class Line {
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(this.xpos, this.ypos);
+    }
+
+    static clearDrawing() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 }
 
@@ -25,8 +31,7 @@ class Line {
 // Buttons
 // Had to store buttons here, otherwise Uncaught ReferenceError if put in index.js
 const lineButton = document.querySelector("#line-button");
-// clears canvas
-const clearButton = document.getElementById('clear-button');
+
 
 lineButton.addEventListener("click", function(e) {
     canvas.addEventListener("mousedown", function(e) {
@@ -45,8 +50,4 @@ lineButton.addEventListener("click", function(e) {
         drawing = false;
         ctx.beginPath();
     })
-})
-
-clearButton.addEventListener("click", function(e) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
 })
