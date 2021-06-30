@@ -15,7 +15,7 @@ const strokeWeight = document.querySelector("body > main > section > div.dashboa
 const randomImageButton = document.getElementById('random-image-button')
 const saveButton = document.getElementById('save-button');
 
-// Needed in referenceImage.js
+// Reference class & ReferenceService Class
 const base_image_url = "http://localhost:8000";
 // create new instance using a URL
 const image = new ReferenceService(base_image_url);
@@ -23,7 +23,9 @@ const image = new ReferenceService(base_image_url);
 randomImageButton.addEventListener ("click", e => 
     image.getImage()
 )
-
+// User class & UserService Class
+const base_rails_url = "http://127.0.0.1:3000"
+const userService = new UserService(base_rails_url);
 
 let drawing = false;
 

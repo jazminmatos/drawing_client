@@ -13,7 +13,6 @@ class Reference {
         this.imgElement.alt = this.name;
         this.imgElement.width = "500";
         this.imgElement.width = "500";
-        // will I need to put width & height
         
         Reference.all.push(this);
     };

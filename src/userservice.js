@@ -4,8 +4,10 @@ class UserService {
     }
 
     // Create Action
-    sendUser() {
-        
+    createUser() {
+        const User = {
+            name: 
+        }
     }
 
     // Read/Index Action
