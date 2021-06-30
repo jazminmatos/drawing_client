@@ -1,11 +1,14 @@
-class ReferenceImage {
+class ReferenceService {
     // remember objects
+    // Do I need this???
     static all = []
     
     constructor (endpoint) {
         this.endpoint = endpoint
-        
-        ReferenceImage.all.push(this)
+
+        this.imgElement = document.createElement('img')
+
+        ReferenceService.all.push(this)
     }
 
     // Read/Index Action
@@ -21,15 +24,6 @@ class ReferenceImage {
     }    
 }
 
-// // Fetch (GET) from JSON file
-// fetch(jsonImageURL)
-//     .then(response =>response.json())
-//     .then(function(json) {
-//     let keys = Object.keys(json);
-//     let imageURL = json[keys[keys.length * Math.random() << 0]].image;
-//     console.log(imageURL)
-//     // use data inside of json to do DOM manipulation
-// })
 // use the Math.random - # between 0-16 - to get an item
 // in the object, then get its image property
 

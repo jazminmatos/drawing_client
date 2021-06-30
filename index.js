@@ -10,7 +10,7 @@ canvas.width = drawingBoard[0].offsetWidth;
 
 // Needed in referenceImage.js
 const base_image_url = "http://localhost:8000"
-const image = new ReferenceImage(base_image_url)
+const image = new ReferenceService(base_image_url)
 
 image.getImage()
 
