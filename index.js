@@ -1,7 +1,4 @@
 // Global variables
-// leads to creation of a CanvasRenderingContext2d object
-// which represents a 2d rendering context
-//const ctx = Line.canvas.getContext("2d");
 // Allows canvas size to be it's container's size
 const drawingBoard = document.getElementsByClassName('drawing-board');
 
@@ -13,9 +10,6 @@ Line.canvas.width = drawingBoard[0].offsetWidth;
 let canvasBounds = Line.canvas.getBoundingClientRect();
 let rectLeft = canvasBounds.left;
 let rectTop = canvasBounds.top;
-
-// Buttons
-const saveButton = document.getElementById('save-button');
 
 // Reference class & ReferenceService Class
 const base_image_url = "http://localhost:8000";

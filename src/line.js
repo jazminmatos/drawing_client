@@ -1,13 +1,15 @@
 class Line {
     static canvas = document.getElementById('canvas');
-    static ctx = Line.canvas.getContext("2d");
+    static ctx = Line.canvas.getContext("2d"); // leads to creation of a CanvasRenderingContext2d object
     
     static drawing = false;
     static colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
     static strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
     
+    // Buttons
     static lineButton = document.querySelector("#line-button");
     static clearButton = document.getElementById('clear-button');
+    static saveButton = document.getElementById('save-button');
     
     constructor(xpos, ypos) {
         this.xpos = xpos;
