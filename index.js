@@ -27,9 +27,20 @@ let rectTop = canvasBounds.top;
 // Fetch Requests
 
 // Fetch (GET) from JSON file
-fetch(jsonImageURL) 
+fetch(jsonImageURL)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(json) {
+        // use data inside of json to do DOM manipulation
+    })
+
 
 // Fetch (GET) drawing from backend db
 
 // Fetch (POST) drawing (send to backend db)
 
+
+
+// Not sure if I want to do this one 
+// Fetch (GET) all drawings from backend db
