@@ -11,9 +11,6 @@ canvas.width = drawingBoard[0].offsetWidth;
 const colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
 const strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
 
-const jsonImageURL = "http://localhost:8000/images"
-
-
 // Buttons
 const saveButton = document.getElementById('save-button');
 
@@ -25,22 +22,6 @@ let rectLeft = canvasBounds.left;
 let rectTop = canvasBounds.top;
 
 // Fetch Requests
-
-// Fetch (GET) from JSON file
-fetch(jsonImageURL)
-    .then(response =>response.json())
-    .then(function(json) {
-    let keys = Object.keys(json);
-    let imageURL = json[keys[keys.length * Math.random() << 0]].image;
-    console.log(imageURL)
-    // use data inside of json to do DOM manipulation
-})
-    // use the Math.random - # between 0-16 - to get an item
-    // in the object, then get its image property
-
-    // DOM manipulation: append img src element using retrieved URL
-
-
 
 
 // Fetch (GET) drawing from backend db
