@@ -1,14 +1,17 @@
-const jsonImageURL = "http://localhost:8000/images"
-
 class ReferenceImage {
+    // remember objects
+    static all = []
+    
     constructor (endpoint) {
         this.endpoint = endpoint
+        
+        ReferenceImage.all.push(this)
     }
 
     // Read/Index Action
     getImage () {
-        fetch(`{this.endpoint}images`)
-            .then(resp => resp.json)
+        fetch(`${this.endpoint}/images`)
+            .then(resp => resp.json())
             .then(function(json) {
             let keys = Object.keys(json);
             let imageURL = json[keys[keys.length * Math.random() << 0]].image;
@@ -31,7 +34,3 @@ class ReferenceImage {
 // in the object, then get its image property
 
 // DOM manipulation: append img src element using retrieved URL
-
-
-const base_image_url = "http://localhost:8000/"
-const referenceImage = new ReferenceImage(base_image_url)

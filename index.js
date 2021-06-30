@@ -8,11 +8,11 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
-let drawing = false;
+// Needed in referenceImage.js
+const base_image_url = "http://localhost:8000"
+const image = new ReferenceImage(base_image_url)
 
-let canvasBounds = canvas.getBoundingClientRect();
-let rectLeft = canvasBounds.left;
-let rectTop = canvasBounds.top;
+image.getImage()
 
 const colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
 const strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
@@ -20,7 +20,12 @@ const strokeWeight = document.querySelector("body > main > section > div.dashboa
 // Buttons
 const saveButton = document.getElementById('save-button');
 
-// Local variables
+let drawing = false;
+
+let canvasBounds = canvas.getBoundingClientRect();
+let rectLeft = canvasBounds.left;
+let rectTop = canvasBounds.top;
+
 
 
 // Fetch Requests
