@@ -8,17 +8,22 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
-// Needed in referenceImage.js
-const base_image_url = "http://localhost:8000"
-const image = new ReferenceService(base_image_url)
-
-image.getImage()
-
 const colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
 const strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
 
 // Buttons
+const randomImageButton = document.getElementById('random-image-button')
 const saveButton = document.getElementById('save-button');
+
+// Needed in referenceImage.js
+const base_image_url = "http://localhost:8000";
+// create new instance using a URL
+const image = new ReferenceService(base_image_url);
+// allows user to fetch and display random image when button is clicked
+randomImageButton.addEventListener ("click", e => 
+    image.getImage()
+)
+
 
 let drawing = false;
 
