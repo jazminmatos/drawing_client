@@ -5,11 +5,17 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext("2d");
 // Allows canvas size to be it's container's size
 const drawingBoard = document.getElementsByClassName('drawing-board');
+
+// Maybe I need to move this into an event listener that listens for window's size change
+// Maybe I'll need to save the below in a static method and then call that method in the event listener
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
+let canvasBounds = canvas.getBoundingClientRect();
+let rectLeft = canvasBounds.left;
+let rectTop = canvasBounds.top;
+
 // Buttons
-const randomImageButton = document.getElementById('random-image-button')
 const saveButton = document.getElementById('save-button');
 
 // Reference class & ReferenceService Class
@@ -17,7 +23,7 @@ const base_image_url = "http://localhost:8000";
 // create new instance using a URL
 const image = new ReferenceService(base_image_url);
 // allows user to fetch and display random image when button is clicked
-randomImageButton.addEventListener ("click", e =>
+Reference.randomImageButton.addEventListener ("click", e =>
     image.getImage()
 )
 
@@ -26,13 +32,5 @@ randomImageButton.addEventListener ("click", e =>
 //const userService = new UserService(base_rails_url);
 
 
-// let canvasBounds = canvas.getBoundingClientRect();
-// let rectLeft = canvasBounds.left;
-// let rectTop = canvasBounds.top;
-
 // Event Listeners
 Line.clearButton.addEventListener("click", Line.clearDrawing)
-
-let canvasBounds = canvas.getBoundingClientRect();
-    let rectLeft = canvasBounds.left;
-    let rectTop = canvasBounds.top;

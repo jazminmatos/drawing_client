@@ -1,6 +1,7 @@
 class Reference {
     static all = [];
     static imagesContainer = document.getElementById("image-container");
+    static randomImageButton = document.getElementById('random-image-button')
 
     constructor ({id, name, imageURL}) {
         this.id = id;

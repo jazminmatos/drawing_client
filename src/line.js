@@ -1,8 +1,10 @@
 class Line {
-    static clearButton = document.getElementById('clear-button');
     static drawing = false;
     static colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
     static strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
+    
+    static lineButton = document.querySelector("#line-button");
+    static clearButton = document.getElementById('clear-button');
     
     constructor(xpos, ypos) {
         this.xpos = xpos;
@@ -33,10 +35,9 @@ class Line {
 
 // Buttons
 // Had to store buttons here, otherwise Uncaught ReferenceError if put in index.js
-const lineButton = document.querySelector("#line-button");
 
 
-lineButton.addEventListener("click", function(e) {
+Line.lineButton.addEventListener("click", function(e) {
     canvas.addEventListener("mousedown", function(e) {
         Line.drawing = true;
         let x = e.clientX - rectLeft;
