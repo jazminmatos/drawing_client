@@ -8,9 +8,6 @@ const drawingBoard = document.getElementsByClassName('drawing-board');
 canvas.height = drawingBoard[0].offsetHeight;
 canvas.width = drawingBoard[0].offsetWidth;
 
-const colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
-const strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
-
 // Buttons
 const randomImageButton = document.getElementById('random-image-button')
 const saveButton = document.getElementById('save-button');
@@ -34,11 +31,3 @@ let rectTop = canvasBounds.top;
 
 // Event Listeners
 Line.clearButton.addEventListener("click", Line.clearDrawing)
-
-
-
-// Fetch Requests
-// Fetch (GET) drawing from backend db
-// Fetch (POST) drawing (send to backend db)
-// Not sure if I want to do this one 
-// Fetch (GET) all drawings from backend db

@@ -1,6 +1,9 @@
 class Line {
     static clearButton = document.getElementById('clear-button');
     static drawing = false;
+    static colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
+    static strokeWeight = document.querySelector("body > main > section > div.dashboard > section.thickness > input");
+
     
     constructor(xpos, ypos) {
         this.xpos = xpos;
@@ -8,9 +11,9 @@ class Line {
     }
 
     draw() {
-        ctx.lineWidth = strokeWeight.value;
+        ctx.lineWidth = Line.strokeWeight.value;
         ctx.lineCap = "round";
-        ctx.strokeStyle = colorPicker.value;
+        ctx.strokeStyle = Line.colorPicker.value;
         
         ctx.lineTo(this.xpos, this.ypos);
         ctx.stroke();
