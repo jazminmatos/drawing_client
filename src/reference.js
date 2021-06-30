@@ -18,7 +18,12 @@ class Reference {
         Reference.all.push(this)
     }
 
+    referenceHTML() {
+        Reference.imagesContainer.innerHTML = ''
+        return this.imgElement
+    }
+
     putOnDom() {
-        Reference.imagesContainer.appendChild(this.imgElement)
+        Reference.imagesContainer.appendChild(this.referenceHTML())
     }
 }
