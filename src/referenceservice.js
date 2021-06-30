@@ -1,6 +1,6 @@
 class ReferenceService {   
     constructor (endpoint) {
-        this.endpoint = endpoint
+        this.endpoint = endpoint;
     }
 
     // Read/Index Action
@@ -11,13 +11,11 @@ class ReferenceService {
                 let keys = Object.keys(json);
                 let imageItem = json[keys[keys.length * Math.random() << 0]];
 
-                const r = new Reference(imageItem)
-                r.putOnDom()
-                
-                console.log(r)
-            })
-    }    
-}
+                const r = new Reference(imageItem);
+                r.putOnDom();
+            });
+    };
+};
 
 // use the Math.random - # between 0-16 - to get an item
 // in the object, then get its image property
