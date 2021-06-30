@@ -1,5 +1,6 @@
 class Line {
     static clearButton = document.getElementById('clear-button');
+    static drawing = false;
     
     constructor(xpos, ypos) {
         this.xpos = xpos;
@@ -35,19 +36,19 @@ const lineButton = document.querySelector("#line-button");
 
 lineButton.addEventListener("click", function(e) {
     canvas.addEventListener("mousedown", function(e) {
-        drawing = true;
+        Line.drawing = true;
         let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
         line.draw(ctx);
     })
     
     canvas.addEventListener("mousemove", function(e) {
-        if (!drawing) return;
+        if (!Line.drawing) return;
         let line = new Line (e.clientX - rectLeft, e.clientY - rectTop);
         line.draw(ctx);
     })
 
     canvas.addEventListener("mouseup", function(e) {
-        drawing = false;
+        Line.drawing = false;
         ctx.beginPath();
     })
 })
