@@ -11,7 +11,8 @@
       - create a user instance using the newly parsed JSON data
 - user.js:
   - handles the creation of the user instance
-- userservice.js: \* append the instance onto the DOM using the putOnDom() instance method
+- userservice.js:
+  - append the instance onto the DOM using the putOnDom() instance method
 - user.js:
   - handles putOnDOM() instance method
     - uses userHTML() instance method to format the HTML and append it to the DOM
