@@ -31,10 +31,16 @@ Reference.randomImageButton.addEventListener ("click", e =>
 // User class & UserService Class
 const base_rails_url = "http://127.0.0.1:3000"
 const userService = new UserService(base_rails_url);
-// Actually, when I submit, I probably want to send that data to the backend first...
-// THEN do a fetch GET request
-// OR
-// check if it exists or not --> if it does, GET request, if not, POST request THEN GET request
-User.userSubmitButton.addEventListener ("click", e =>
-    userService.getUser()
-)
+
+User.userSubmitButton.addEventListener ("click", function(e) {
+    let userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
+    // if value exists as an instance inside User.all 
+    if (userExists != undefined) {
+        // Return info from User.all & append that to the DOM
+        userExists.putOnDOM()
+    } else {
+    // else if doesn't exist in User.all
+        // Run fetch POST request 
+        userService.createUser()
+    }
+})

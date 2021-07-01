@@ -14,7 +14,7 @@
         - create a new User instance (b/c now it will have an id)
         - append it to the DOM
       - else if found...
-        - look for it in User.all (might be a problem if names != unique)
+        - Search for the existing instance for it in User.all (might be a problem if names != unique)
         - append it to the DOM
 - user.js:
   - handles the creation of the user instance

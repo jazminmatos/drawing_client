@@ -8,25 +8,21 @@ class User {
         this.id = id
         this.username = username;
 
-        this.userElement = document.createElement('li');
+        this.userElement = document.createElement('div');
         this.userElement.id = `user-${this.id}`;
 
         User.all.push(this);
     }
 
     userHTML() {
-        // Remove the username input & submit button when appending username to DOM
-        // if not doing the above, clear value of username-input
-        // Reference.usernameContainer.innerHTML = '';
-        // Write `${this.username} has drawn...`
-        this.element.innerHTML += `
-            <h3>${this.name}</h3>
+        this.userElement.innerHTML += `
+            <h3>${this.username} has drawn...</h3>
         `
         
         return this.userElement;
     }
 
-    putonDom() {
-        Reference.usernameContainer.appendChild(this.userHTML());
+    putOnDom() {
+        User.usernameContainer.appendChild(this.userHTML());
     }
 }

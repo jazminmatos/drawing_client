@@ -10,21 +10,32 @@ class UserService {
             .then(resp => resp.json())
             .then(function(json) {
                 // Iterate through JSON object trying to find (or filter) using 
-                let uName = json.find(x => x.username === User.userInput.value);
-                console.log(uName);
-                // if uName === undefined
-                    // send a POST request to backend
-                    // retrieve it using a GET request
-                    // create a new instance (b/c now it will have an ID) & append to DOM
-                // else, look for it in User.all (might be a problem if names != unique) & append it to the DOM                
+                let uName = json.find(obj => obj.username === User.userInput.value);
+                uName.putOnDOM()
             })
     }
 
     // Create Action
     createUser() {
-        const User = {
-            name: "something will go here"
+        const user = {
+            username: User.userInput.value
         }
+
+        const configObj = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // username === object, but everything we share on internet needs to be a string 
+            body: JSON.stringify(user)
+        }
+
+        fetch(`${this.endpoint}/users`, configObj)
+            .then(resp => resp.json())
+            .then(user => {
+                const u = new User(user.id, user.username)
+                u.putOnDom()
+            })
     }
 
 }
