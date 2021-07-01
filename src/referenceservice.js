@@ -11,11 +11,17 @@ class ReferenceService {
                 let keys = Object.keys(json);
                 // use the Math.random - # between 0-16 - to get an item
                 let imageItem = json[keys[keys.length * Math.random() << 0]];
-
-                // create an instance of Reference using parsed JSON data
-                const r = new Reference(imageItem);
-                // append that instance to the DOM
-                r.putOnDom();
+                // Searches whether it already exists in Reference.all so that we don't have to do unecessary fetches
+                let imageExists = Reference.all.find(obj => obj.name === imageItem.name)
+                if (imageExists != undefined) {
+                    // append that instance to the DOM
+                    imageExists.putOnDom()
+                } else {
+                    // create an instance of Reference using parsed JSON data
+                    const newImageInstance = new Reference(imageItem);
+                    // append that instance to the DOM
+                    newImageInstance.putOnDom()
+                }
             });
     };
 };
