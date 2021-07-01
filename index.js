@@ -31,3 +31,8 @@ Reference.randomImageButton.addEventListener ("click", e =>
 // User class & UserService Class
 const base_rails_url = "http://127.0.0.1:3000"
 const userService = new UserService(base_rails_url);
+// Actually, when I submit, I probably want to send that data to the backend first...
+// THEN do a fetch GET request
+// User.userSubmitButton.addEventListener ("click", e =>
+    userService.getUser()
+// )
