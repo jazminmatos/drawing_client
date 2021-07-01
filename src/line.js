@@ -1,6 +1,8 @@
 class Line {
     static canvas = document.getElementById('canvas');
     static ctx = Line.canvas.getContext("2d"); // leads to creation of a CanvasRenderingContext2d object
+
+    static drawingBoard = document.getElementsByClassName('drawing-board');
     
     static drawing = false;
     static colorPicker = document.querySelector("body > main > section > div.dashboard > section.colors > input");
@@ -26,17 +28,16 @@ class Line {
         Line.ctx.beginPath();
         Line.ctx.moveTo(this.xpos, this.ypos);
     }
-
+    
+    static resizeCanvas() {
+        Line.canvas.height = Line.drawingBoard[0].offsetHeight;
+        Line.canvas.width = Line.drawingBoard[0].offsetWidth;
+    }
+    
     static clearDrawing() {
         Line.ctx.clearRect(0, 0, Line.canvas.width, Line.canvas.height);
     }
 }
-
-// EventListeners
-// When lineButton clicked, user can draw w/ lines
-// An example of a permanent 'line' (looks like a dot):
-// let line = new Line(100, 200)
-// line.draw(ctx)
 
 
 Line.lineButton.addEventListener("click", function(e) {
@@ -61,3 +62,6 @@ Line.lineButton.addEventListener("click", function(e) {
         Line.ctx.beginPath();
     })
 })
+
+window.addEventListener('resize', Line.resizeCanvas);
+Line.resizeCanvas()

@@ -1,11 +1,9 @@
 // Global variables
-// Allows canvas size to be it's container's size
-const drawingBoard = document.getElementsByClassName('drawing-board');
 
 // Maybe I need to move this into an event listener that listens for window's size change
 // Maybe I'll need to save the below in a static method and then call that method in the event listener
-Line.canvas.height = drawingBoard[0].offsetHeight;
-Line.canvas.width = drawingBoard[0].offsetWidth;
+// Line.canvas.height = Line.drawingBoard[0].offsetHeight;
+// Line.canvas.width = Line.drawingBoard[0].offsetWidth;
 
 let canvasBounds = Line.canvas.getBoundingClientRect();
 let rectLeft = canvasBounds.left;
