@@ -1,6 +1,7 @@
 class User {
     static all = []
     static usernameContainer = document.getElementById("username-container")
+    static userInput = document.getElementById("username-input")
     static userSubmitButton = document.getElementById("submit-username-button")
 
     constructor (id, username) {

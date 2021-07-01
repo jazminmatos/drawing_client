@@ -7,8 +7,15 @@
 - userservice.js:
   - .getUser() runs a fetch GET request to retrieve usernames from backend
     - JSON is parsed
-      - iterate through JSON object trying to find (or filter if can't do unique usernames?) username === value of input field (id="username-input")
-      - create a user instance using the newly parsed JSON data
+      - iterate through JSON object to find (or filter if usernames != unique?) username === value of input field
+      - if not found...
+        - send a POST request to backend
+        - retrieve it using a GET request
+        - create a new User instance (b/c now it will have an id)
+        - append it to the DOM
+      - else if found...
+        - look for it in User.all (might be a problem if names != unique)
+        - append it to the DOM
 - user.js:
   - handles the creation of the user instance
 - userservice.js:
