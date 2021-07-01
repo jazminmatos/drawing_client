@@ -1,7 +1,23 @@
-// Global variables
-
 // Line class
-Line.setCanvasSize()
+Line.setCanvasSize();
+Line.clearButton.addEventListener("click", Line.clearDrawing)
+
+Line.lineButton.addEventListener("click", function(e) {
+    Line.canvas.addEventListener("mousedown", function(e) {
+        Line.drawing = true;
+        createLines(e)
+    })
+    
+    Line.canvas.addEventListener("mousemove", function(e) {
+        if (!Line.drawing) return;
+        createLines(e)
+    })
+
+    Line.canvas.addEventListener("mouseup", function(e) {
+        Line.drawing = false;
+        Line.ctx.beginPath();
+    })
+})
 
 // Reference class & ReferenceService Class
 const base_image_url = "http://localhost:8000";
@@ -13,9 +29,5 @@ Reference.randomImageButton.addEventListener ("click", e =>
 )
 
 // User class & UserService Class
-//const base_rails_url = "http://127.0.0.1:3000"
-//const userService = new UserService(base_rails_url);
-
-
-// Event Listeners
-Line.clearButton.addEventListener("click", Line.clearDrawing)
+const base_rails_url = "http://127.0.0.1:3000"
+const userService = new UserService(base_rails_url);

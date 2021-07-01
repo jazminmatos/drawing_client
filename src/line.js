@@ -39,11 +39,8 @@ class Line {
     }
 }
 
-
-Line.lineButton.addEventListener("click", function(e) {
-    Line.canvas.addEventListener("mousedown", function(e) {
-        Line.drawing = true;
-        
+// Is this the best place for this function to go?
+function createLines(e) {
         let canvasBounds = Line.canvas.getBoundingClientRect();
         let rectLeft = canvasBounds.left;
         let rectTop = canvasBounds.top;
@@ -52,23 +49,4 @@ Line.lineButton.addEventListener("click", function(e) {
         let y = e.clientY - rectTop;
         let line = new Line (x, y);
         line.draw(Line.ctx);
-    })
-    
-    Line.canvas.addEventListener("mousemove", function(e) {
-        if (!Line.drawing) return;
-        
-        let canvasBounds = Line.canvas.getBoundingClientRect();
-        let rectLeft = canvasBounds.left;
-        let rectTop = canvasBounds.top;
-        
-        let x = e.clientX - rectLeft;
-        let y = e.clientY - rectTop;
-        let line = new Line (x, y);
-        line.draw(Line.ctx);
-    })
-
-    Line.canvas.addEventListener("mouseup", function(e) {
-        Line.drawing = false;
-        Line.ctx.beginPath();
-    })
-})
+}
