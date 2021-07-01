@@ -15,7 +15,7 @@ class User {
     }
 
     userHTML() {
-        this.userElement.innerHTML += `
+        this.userElement.innerHTML = `
             <h3>${this.username} has drawn...</h3>
         `
         

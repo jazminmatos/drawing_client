@@ -39,7 +39,6 @@ User.userSubmitButton.addEventListener ("click", function(e) {
         // if doesn't exist in User.all
         // Run fetch POST request 
         userService.createUser()
-        console.log(userExists)
     } else {
         // Return info from User.all & append that to the DOM
         // BUG: This will update the DOM twice....
