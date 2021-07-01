@@ -72,5 +72,3 @@ Line.lineButton.addEventListener("click", function(e) {
         Line.ctx.beginPath();
     })
 })
-
-Line.setCanvasSize()
