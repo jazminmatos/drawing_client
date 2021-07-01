@@ -10,7 +10,10 @@ class UserService {
             .then(resp => resp.json())
             .then(function(json) {
                 // Iterate through JSON object trying to find (or filter) using 
-                let uName = json.find(obj => obj.username === User.userInput.value);
+                let uName = json.find(function(obj) { 
+                    obj.username === User.userInput.value
+                    return 
+                });
                 uName.putOnDOM()
             })
     }

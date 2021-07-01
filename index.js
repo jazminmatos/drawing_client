@@ -35,12 +35,13 @@ const userService = new UserService(base_rails_url);
 User.userSubmitButton.addEventListener ("click", function(e) {
     let userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
     // if value exists as an instance inside User.all 
-    if (userExists != undefined) {
-        // Return info from User.all & append that to the DOM
-        userExists.putOnDOM()
-    } else {
-    // else if doesn't exist in User.all
+    if (userExists === undefined) {
+        // if doesn't exist in User.all
         // Run fetch POST request 
         userService.createUser()
+        console.log(userExists)
+    } else {
+        // Return info from User.all & append that to the DOM
+        userExists.putOnDom()
     }
 })
