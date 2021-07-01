@@ -1,13 +1,7 @@
 // Global variables
 
-// Maybe I need to move this into an event listener that listens for window's size change
-// Maybe I'll need to save the below in a static method and then call that method in the event listener
-// Line.canvas.height = Line.drawingBoard[0].offsetHeight;
-// Line.canvas.width = Line.drawingBoard[0].offsetWidth;
-
-let canvasBounds = Line.canvas.getBoundingClientRect();
-let rectLeft = canvasBounds.left;
-let rectTop = canvasBounds.top;
+// Line class
+Line.setCanvasSize()
 
 // Reference class & ReferenceService Class
 const base_image_url = "http://localhost:8000";

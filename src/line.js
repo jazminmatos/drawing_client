@@ -29,7 +29,7 @@ class Line {
         Line.ctx.moveTo(this.xpos, this.ypos);
     }
     
-    static resizeCanvas() {
+    static setCanvasSize() {
         Line.canvas.height = Line.drawingBoard[0].offsetHeight;
         Line.canvas.width = Line.drawingBoard[0].offsetWidth;
     }
@@ -43,6 +43,11 @@ class Line {
 Line.lineButton.addEventListener("click", function(e) {
     Line.canvas.addEventListener("mousedown", function(e) {
         Line.drawing = true;
+        
+        let canvasBounds = Line.canvas.getBoundingClientRect();
+        let rectLeft = canvasBounds.left;
+        let rectTop = canvasBounds.top;
+        
         let x = e.clientX - rectLeft;
         let y = e.clientY - rectTop;
         let line = new Line (x, y);
@@ -51,6 +56,11 @@ Line.lineButton.addEventListener("click", function(e) {
     
     Line.canvas.addEventListener("mousemove", function(e) {
         if (!Line.drawing) return;
+        
+        let canvasBounds = Line.canvas.getBoundingClientRect();
+        let rectLeft = canvasBounds.left;
+        let rectTop = canvasBounds.top;
+        
         let x = e.clientX - rectLeft;
         let y = e.clientY - rectTop;
         let line = new Line (x, y);
@@ -63,5 +73,4 @@ Line.lineButton.addEventListener("click", function(e) {
     })
 })
 
-window.addEventListener('resize', Line.resizeCanvas);
-Line.resizeCanvas()
+Line.setCanvasSize()
