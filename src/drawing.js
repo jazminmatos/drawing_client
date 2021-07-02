@@ -21,9 +21,7 @@ class Drawing {
     drawingHTML() {
         //return this.drawingElement
         this.drawingElement.innerHTML += `
-            <li>
-                <button id="${this.id}" class="drawing buttons">See drawing ${this.id}</button>
-            </li>
+            <button id="${this.id}" class="drawing buttons">See drawing ${this.id}</button>
         `
 
         return this.drawingElement
