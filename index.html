@@ -30,7 +30,7 @@
                     <input type="text" id="username-input" value="write your username">
                     <button id="submit-username-button">Submit</button>
                     <section id="username-list">
-                        
+
                     </section>
                 </section>
                 <!-- 2. List of user's drawings -->
@@ -70,9 +70,11 @@
     <div class="shape3"></div>
 
     <!-- index.js needs to be last b/c it depends on all the others, otherwise order != matter -->
+    <script src="src/line.js"></script>
     <script src="src/user.js"></script>
     <script src="src/userservice.js"></script>
-    <script src="src/line.js"></script>
+    <script src="src/drawing.js"></script>
+    <script src="src/drawingservice.js"></script>
     <script src="src/reference.js"></script>
     <script src="src/referenceservice.js"></script>
     <script src="index.js"></script>
