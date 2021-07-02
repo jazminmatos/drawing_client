@@ -9,16 +9,20 @@ class UserService {
         fetch(`${this.endpoint}/users`)
             .then(resp => resp.json())
             .then(function(json) {
-                // Iterate through JSON object trying to find (or filter) using 
-                // 1. Need to check if it exists in JSON object,
-                // 2. If yes, need to check if it exists in User.all
-                    // If it exists in User.all, use the object from User.all and append it to DOM
-                    // If it does NOT exist in User.all, create a new instance, then append to DOM 
-                let uName = json.find(function(obj) { 
-                    obj.username === User.userInput.value
-                    return 
-                });
-                uName.putOnDOM()
+                // Iterate through JSON object using to find
+                // Check if the object in JSON object === to inputValue
+                let foundName = json.find(obj => obj.username === User.userInput.value);
+                // if inputValue exists in the backend
+                if (foundName != undefined) {
+                    // create a new instance of the User in the frontend
+                    const newUsernameInstance = new User(foundName.id, foundName.username)
+                    // append to DOM
+                    newUsernameInstance.putOnDom()
+                // if inputValue does NOT exist in the backend
+                } else {
+                    // send a fetch POST request 
+                    userService.createUser()
+                }
             })
     }
 
