@@ -12,13 +12,25 @@
     <title>Drawing App</title>
 </head>
 <body>
+    <header>
+        <br />
+        <h3 style="text-align:center;">
+            Welcome to the Drawing App. 
+            <br />
+            Generate a random image and click the start drawing button. 
+            <br />
+            Once you are satisfied with your drawing, submit a username and save as an image. 
+            <br />
+            If you'd like to see your saved image, click to see the drawing. 
+        </h3>
+        <br />
+    </header>
     <main>
         <section class="glass">
             
             <div class="reference-image">
                 <!-- 1. Random reference image -->
                 <section class="images">
-                    <h3>Pull up a random image</h3>
                     <button id="random-image-button" class="buttons">Generate Random Image</button>
                     <br /><br /><br /><br />
                     <div id="image-container">
@@ -27,15 +39,13 @@
                     <br /><br /><br />
                 <!-- 2. List of users -->                
                 <section id="username-container">
-                    <input type="text" id="username-input" value="write your username">
+                    <input type="text" id="username-input" value="write your username...">
                     <button id="submit-username-button" class="buttons">Submit</button>
                     <section id="username-list">
-
                     </section>
                 </section>
                 <!-- 2. List of user's drawings -->
                 <div id="user-drawings">
-                    <br /><br /><br />
                 </div>
             </div>
             
@@ -62,7 +72,6 @@
             </div>
         </section>
     </main>
-
     <div class="shape1"></div>
     <div class="shape2"></div>
     <div class="shape3"></div>

@@ -5,9 +5,9 @@
   box-sizing: border-box;
 }
 
-h3 {
-  opacity: 0.8;
-  color: #2a2829;
+header {
+  font-family: "ABeeZee", sans-serif;
+  background: linear-gradient(to right top, #fee5ff, #fe8aea);
 }
 
 main {
@@ -65,9 +65,9 @@ main {
 }
 
 .shape3 {
-  bottom: 50%;
-  left: 50%;
-  background: #ee3d96;
+  bottom: 30%;
+  left: 40%;
+  background: #ff92c8;
 }
 
 .dashboard {
@@ -95,8 +95,9 @@ main {
   flex: 2;
 }
 
+.reference-image,
 #canvas {
-  border: 2px solid black;
+  border: 2px solid #fe8aea;
   overflow: auto;
   border-radius: 2rem;
 }
@@ -113,9 +114,27 @@ main {
   );
   color: #2a2829;
   border: 2px solid #fe8aea;
+  box-shadow: gray 4px 4px 4px 0;
 }
 
 button:hover {
   background: #ffe8fa;
-  padding: 20px;
+  padding: 15px;
+}
+
+#username-input,
+.stroke-weight,
+.color-picker {
+  border: 2px solid #fe8aea;
+  border-radius: 2rem;
+  padding: 10px;
+  background: #ffe8fa;
+}
+
+h3 {
+  opacity: 0.8;
+  color: #2a2829;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
