@@ -41,7 +41,6 @@ User.userSubmitButton.addEventListener ("click", function(e) {
         userService.createUser()
     } else {
         // Return info from User.all & append that to the DOM
-        // BUG: This will update the DOM twice....
         userExists.putOnDom()
     }
 })

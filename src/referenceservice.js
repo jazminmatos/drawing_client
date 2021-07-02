@@ -11,7 +11,7 @@ class ReferenceService {
                 let keys = Object.keys(json);
                 // use the Math.random - # between 0-16 - to get an item
                 let imageItem = json[keys[keys.length * Math.random() << 0]];
-                // Searches whether it already exists in Reference.all so that we don't have to do unecessary fetches
+                // Searches whether it already exists in Reference.all so that we don't have to create new instances
                 let imageExists = Reference.all.find(obj => obj.name === imageItem.name)
                 if (imageExists != undefined) {
                     // append that instance to the DOM
