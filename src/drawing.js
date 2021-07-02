@@ -13,7 +13,7 @@ class Drawing {
 
         this.drawingElement = document.createElement("div");
         // this.drawingElement.id = `drawing-${this.id}`;
-        this.drawingElement.addEventListener("click", this.handleClick);
+        this.drawingElement.addEventListener("click", this.convertImgDataToDrawing);
 
         Drawing.all.push(this);
     }
@@ -22,7 +22,7 @@ class Drawing {
         //return this.drawingElement
         this.drawingElement.innerHTML += `
             <li>
-                <button id="${this.id}" class="drawing">See drawing ${this.id}</button>
+                <button id="${this.id}" class="drawing buttons">See drawing ${this.id}</button>
             </li>
         `
 
@@ -36,7 +36,7 @@ class Drawing {
         Drawing.userDrawingList.appendChild(this.drawingHTML());
     }
 
-    handleClick(e) {
+    convertImgDataToDrawing(e) {
         if (e.target.className === `drawing`) {
             let drawing_id = e.target.id
             let drawingExists = Drawing.all.find(drawingInstance => drawingInstance.id === drawing_id)
