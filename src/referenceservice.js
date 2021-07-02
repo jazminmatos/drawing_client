@@ -8,13 +8,13 @@ class ReferenceService {
         fetch(`${this.endpoint}/images`)
             .then(resp => resp.json())
             .then(function(json) {
-                let keys = Object.keys(json);
+                const keys = Object.keys(json);
                 // use the Math.random - # between 0-16 - to get an item
                 // const random = Math.floor(Math.random() * 17))
                 // Object.keys(json).filter(image => image.id === random)
-                let imageItem = json[keys[keys.length * Math.random() << 0]];
+                const imageItem = json[keys[keys.length * Math.random() << 0]];
                 // Searches whether it already exists in Reference.all so that we don't have to create new instances
-                let imageExists = Reference.all.find(obj => obj.name === imageItem.name)
+                const imageExists = Reference.all.find(obj => obj.name === imageItem.name)
                 if (imageExists != undefined) {
                     // append that instance to the DOM
                     imageExists.putOnDom()

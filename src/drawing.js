@@ -27,9 +27,6 @@ class Drawing {
         `
 
         return this.drawingElement
-        // How do I make it so that ALL of their previous drawings show up
-        // as soon as their username gets submited
-            // in userSubmitButton.eventListener, also do a 
     }
 
     putOnDom() {
@@ -37,14 +34,13 @@ class Drawing {
     }
 
     convertImgDataToDrawing(e) {
-        debugger
         if (e.target.className === "drawing buttons") {
-            let drawing_id = e.target.id
-            let drawingExists = Drawing.all.find(drawingInstance => drawingInstance.id === drawing_id)
+            const drawing_id = e.target.id
+            const drawingExists = Drawing.all.find(drawingInstance => drawingInstance.id === drawing_id)
             
             if (Drawing.all.length > 0 && drawingExists != undefined) {
                 // reconvert drawingExists.image to canvas
-                let imageData = drawingExists.image
+                const imageData = drawingExists.image
                 Line.ctx.drawImage(imageData, 0, 0)
             } else {
                 drawingService.getDrawing(drawing_id)

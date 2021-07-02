@@ -12,10 +12,10 @@ class DrawingService {
                 // No need to check if it exists in the backend, 
                 // b/c we know for sure it's there, 
                 // or else we wouldn't have access to the show button
-                let imageData = json[drawing_id - 1].image
+                const imageData = json[drawing_id - 1].image
 
                 // reload image onto canvas using Drawing.all & instance id
-                let img = new Image()
+                const img = new Image()
                 img.onload = function() {
                     Line.ctx.drawImage(img, 0, 0)
                 }

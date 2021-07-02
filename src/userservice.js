@@ -11,7 +11,7 @@ class UserService {
             .then(function(json) {
                 // Iterate through JSON object using find
                 // Check if the object in JSON object === to inputValue
-                let foundName = json.find(obj => obj.username === User.userInput.value);
+                const foundName = json.find(obj => obj.username === User.userInput.value);
                 // if inputValue exists in the backend
                 if (foundName != undefined) {
                     // create a new instance of the User in the frontend
