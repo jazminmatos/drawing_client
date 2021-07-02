@@ -44,8 +44,8 @@ class UserService {
         fetch(`${this.endpoint}/users`, configObj)
             .then(resp => resp.json())
             .then(user => {
-                const u = new User(user.id, user.username)
-                u.putOnDom()
+                const newUserInstance = new User(user.id, user.username)
+                newUserInstance.putOnDom()
             })
     }
 
