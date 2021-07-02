@@ -9,7 +9,7 @@ class UserService {
         fetch(`${this.endpoint}/users`)
             .then(resp => resp.json())
             .then(function(json) {
-                // Iterate through JSON object using to find
+                // Iterate through JSON object using find
                 // Check if the object in JSON object === to inputValue
                 let foundName = json.find(obj => obj.username === User.userInput.value);
                 // if inputValue exists in the backend

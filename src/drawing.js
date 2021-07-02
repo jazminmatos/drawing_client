@@ -38,14 +38,15 @@ class Drawing {
 
     handleClick(e) {
         if (e.target.className === `drawing`) {
-            console.log(e.target.id)
-            let drawingExists = Drawing.all.find(drawingInstance.id === e.target.id)
+            let drawing_id = e.target.id
+            let drawingExists = Drawing.all.find(drawingInstance => drawingInstance.id === drawing_id)
             
             if (Drawing.all.length > 0 && drawingExists != undefined) {
                 // reconvert drawingExists.image to canvas
-                ctx.drawImage(drawingInstance.image, 0, 0)
+                let imageData = drawingExists.image
+                Line.ctx.drawImage(imageData, 0, 0)
             } else {
-                drawingService.getDrawing()
+                drawingService.getDrawing(drawing_id)
                     // this should result in reconversion of image to canvas
             }
         }
