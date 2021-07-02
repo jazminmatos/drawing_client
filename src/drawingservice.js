@@ -1,4 +1,4 @@
-class DrawingService {
+class DrawingService {    
     constructor(endpoint) {
         this.endpoint = endpoint;
     }
@@ -14,11 +14,11 @@ class DrawingService {
     }
 
     // Create Action
-    createDrawing() {
+    createDrawing(userId) {
         // fetch POST request to send to backend & retrieve
         const drawing = {
-            image: "this will be the result of .toDataURL()",
-            user_id: "this will be the id of the current username, can be found using userElement.id"
+            image: Line.canvas.toDataURL(),
+            user_id: userId
         }
 
         const configObj = {
@@ -34,6 +34,9 @@ class DrawingService {
             .then(resp => resp.json())
             .then(drawing => {
                 const newDrawingInstance = new Drawing(drawing.id, drawing.image, drawing.user_id)
+                newDrawingInstance.putOnDom()
+                console.log(newDrawingInstance)
+                // put link of instance on the DOM
             })
     }
 }

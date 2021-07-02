@@ -11,7 +11,6 @@ class Line {
     // Buttons
     static lineButton = document.querySelector("#line-button");
     static clearButton = document.getElementById('clear-button');
-    static saveButton = document.getElementById('save-button');
     
     constructor(xpos, ypos) {
         this.xpos = xpos;

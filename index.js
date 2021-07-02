@@ -28,19 +28,35 @@ Reference.randomImageButton.addEventListener ("click", e =>
     image.getImage()
 )
 
-// User class & UserService Class
+// User class & UserService lass
 const base_rails_url = "http://127.0.0.1:3000"
 const userService = new UserService(base_rails_url);
+// this variable gets updated in User's .putOnDom() method
+// then gets used to create a drawing
+let userId = ""
 
 User.userSubmitButton.addEventListener ("click", function(e) {
     // Necessary to check User.all length b/c User.all array becomes empty on refresh
     // Also prevents unecessary fetch requests
-    e.preventDefault()
     let userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
     
     if (User.all.length > 0 && userExists != undefined) {
         userExists.putOnDom()
     } else {
         userService.getUser()
+    }
+})
+
+// Drawing class & DrawingService class
+const drawingService = new DrawingService(base_rails_url)
+
+Drawing.saveDrawingButton.addEventListener ("click", function(e) {
+    // if usernameList section is NOT empty, meaning if a username has been submitted/appended
+    if (User.usernameList.innerText.length != 0) {
+        // Retrieve id and pass it in as an argument to createDrawing
+        drawingService.createDrawing(userId)
+    } else {
+        // alert: You cannot save the drawing without submitting a username
+        window.alert("You cannot save the drawing without submitting a username...😅")
     }
 })
