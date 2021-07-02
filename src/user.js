@@ -5,7 +5,7 @@ class User {
     static userSubmitButton = document.querySelector("#submit-username-button")
     static signOutButton = document.getElementById("sign-out-button")
 
-    constructor (id, username, drawings, drawings_ids) {
+    constructor (id, username, drawings) {
         this.id = id
         this.username = username;
         this.drawings = drawings;
@@ -16,6 +16,7 @@ class User {
         this.userElement.className = "user"
 
         User.all.push(this);
+        //Drawing.all.push(this.drawings)
     }
 
     userHTML() {
@@ -25,7 +26,9 @@ class User {
             <h3>Submit another user to switch users</h3>
             <br /><br /><br />
             <h3>${this.username} has drawn...</h3>
+            ${this.drawings}
         `
+        debugger
         // Maybe I should add a 'sign out' button that will make the above disappear?
         // And then make the user input & submit reappear
         return this.userElement;
