@@ -37,15 +37,3 @@ class Line {
         Line.ctx.clearRect(0, 0, Line.canvas.width, Line.canvas.height);
     }
 }
-
-// Is this the best place for this function to go?
-function createLines(e) {
-        let canvasBounds = Line.canvas.getBoundingClientRect();
-        let rectLeft = canvasBounds.left;
-        let rectTop = canvasBounds.top;
-        
-        let x = e.clientX - rectLeft;
-        let y = e.clientY - rectTop;
-        let line = new Line (x, y);
-        line.draw(Line.ctx);
-}

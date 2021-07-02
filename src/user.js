@@ -5,9 +5,11 @@ class User {
     static userSubmitButton = document.querySelector("#submit-username-button")
     static signOutButton = document.getElementById("sign-out-button")
 
-    constructor (id, username) {
+    constructor (id, username, drawings, drawings_ids) {
         this.id = id
         this.username = username;
+        this.drawings = drawings;
+        this.drawings_ids = drawings_ids;
 
         this.userElement = document.createElement('div');
         this.userElement.id = `user-${this.id}`;

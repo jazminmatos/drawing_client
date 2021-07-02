@@ -2,6 +2,17 @@
 Line.setCanvasSize();
 Line.clearButton.addEventListener("click", Line.clearDrawing)
 
+function createLines(e) {
+        const canvasBounds = Line.canvas.getBoundingClientRect();
+        const rectLeft = canvasBounds.left;
+        const rectTop = canvasBounds.top;
+        
+        const x = e.clientX - rectLeft;
+        const y = e.clientY - rectTop;
+        const line = new Line (x, y);
+        line.draw(Line.ctx);
+}
+
 Line.lineButton.addEventListener("click", function(e) {
     Line.canvas.addEventListener("mousedown", function(e) {
         Line.drawing = true;
@@ -38,7 +49,8 @@ let userId = ""
 User.userSubmitButton.addEventListener ("click", function(e) {
     // Necessary to check User.all length b/c User.all array becomes empty on refresh
     // Also prevents unecessary fetch requests
-    let userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
+    const input = User.userInput.value
+    const userExists = User.all.find(userInstance => userInstance.username === input);
     
     if (User.all.length > 0 && userExists != undefined) {
         userExists.putOnDom()

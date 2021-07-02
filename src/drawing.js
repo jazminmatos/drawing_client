@@ -37,7 +37,8 @@ class Drawing {
     }
 
     convertImgDataToDrawing(e) {
-        if (e.target.className === `drawing`) {
+        debugger
+        if (e.target.className === "drawing buttons") {
             let drawing_id = e.target.id
             let drawingExists = Drawing.all.find(drawingInstance => drawingInstance.id === drawing_id)
             
