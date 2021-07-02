@@ -1,8 +1,9 @@
 class User {
     static all = []
-    static usernameContainer = document.getElementById("username-container")
-    static userInput = document.getElementById("username-input")
-    static userSubmitButton = document.getElementById("submit-username-button")
+    static usernameList = document.getElementById("username-list")
+    static userInput = document.querySelector("#username-input")
+    static userSubmitButton = document.querySelector("#submit-username-button")
+    static signOutButton = document.getElementById("sign-out-button")
 
     constructor (id, username) {
         this.id = id
@@ -15,14 +16,18 @@ class User {
     }
 
     userHTML() {
+        User.usernameList.innerHTML = ''
         this.userElement.innerHTML = `
+            <h3>Submit another user to switch users</h3>
+            <br /><br /><br />
             <h3>${this.username} has drawn...</h3>
         `
-        
+        // Maybe I should add a 'sign out' button that will make the above disappear?
+        // And then make the user input & submit reappear
         return this.userElement;
     }
 
     putOnDom() {
-        User.usernameContainer.appendChild(this.userHTML());
+        User.usernameList.appendChild(this.userHTML());
     }
 }

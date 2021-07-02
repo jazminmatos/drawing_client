@@ -33,8 +33,11 @@ const base_rails_url = "http://127.0.0.1:3000"
 const userService = new UserService(base_rails_url);
 
 User.userSubmitButton.addEventListener ("click", function(e) {
-    let userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
     // Necessary to check User.all length b/c User.all array becomes empty on refresh
+    // Also prevents unecessary fetch requests
+    e.preventDefault()
+    let userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
+    
     if (User.all.length > 0 && userExists != undefined) {
         userExists.putOnDom()
     } else {
