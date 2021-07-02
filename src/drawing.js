@@ -12,14 +12,17 @@ class Drawing {
         this.user_id = user_id;
 
         this.drawingElement = document.createElement("div");
-        this.drawingElement.id = `drawing-${this.id}`;
+        // this.drawingElement.id = `drawing-${this.id}`;
+        this.drawingElement.addEventListener("click", this.handleClick);
+
+        Drawing.all.push(this);
     }
 
     drawingHTML() {
         //return this.drawingElement
         this.drawingElement.innerHTML += `
             <li>
-                <button>${this.id}</button>
+                <button id="${this.id}" class="drawing">See drawing ${this.id}</button>
             </li>
         `
 
@@ -31,5 +34,20 @@ class Drawing {
 
     putOnDom() {
         Drawing.userDrawingList.appendChild(this.drawingHTML());
+    }
+
+    handleClick(e) {
+        if (e.target.className === `drawing`) {
+            console.log(e.target.id)
+            let drawingExists = Drawing.all.find(drawingInstance.id === e.target.id)
+            
+            if (Drawing.all.length > 0 && drawingExists != undefined) {
+                // reconvert drawingExists.image to canvas
+                ctx.drawImage(drawingInstance.image, 0, 0)
+            } else {
+                drawingService.getDrawing()
+                    // this should result in reconversion of image to canvas
+            }
+        }
     }
 }

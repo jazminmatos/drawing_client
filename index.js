@@ -61,4 +61,10 @@ Drawing.saveDrawingButton.addEventListener ("click", function(e) {
     }
 })
 
-// ctx.drawImage(drawingInstance.image, 0, 0)
+// add event listener for drawing-:id buttons
+// when clicked, fetch GET request OR search for it in Drawing.all
+    // convert image attribute and reload it onto canvas
+        // reload image onto canvas using Drawing.all & instance id
+        // ctx.drawImage(drawingInstance.image, 0, 0)
+
+// Need to figure out a way to have all of a user's drawings show up when a user submits username
