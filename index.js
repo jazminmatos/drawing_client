@@ -60,3 +60,5 @@ Drawing.saveDrawingButton.addEventListener ("click", function(e) {
         window.alert("You cannot save the drawing without submitting a username...😅")
     }
 })
+
+// ctx.drawImage(drawingInstance.image, 0, 0)

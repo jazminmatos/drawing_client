@@ -10,7 +10,7 @@ class User {
         this.username = username;
 
         this.userElement = document.createElement('div');
-        this.userElement.id = `${this.id}`;
+        this.userElement.id = `user-${this.id}`;
         this.userElement.className = "user"
 
         User.all.push(this);

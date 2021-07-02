@@ -35,8 +35,8 @@ class DrawingService {
             .then(drawing => {
                 const newDrawingInstance = new Drawing(drawing.id, drawing.image, drawing.user_id)
                 newDrawingInstance.putOnDom()
+                
                 console.log(newDrawingInstance)
-                // put link of instance on the DOM
             })
     }
 }
