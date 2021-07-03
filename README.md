@@ -20,3 +20,11 @@ Clone the following repos and follow instructions:
   - Start the json server: json-server --watch images.json --port 8000
 - Frontend: [drawing_client](https://github.com/jazminmatos/drawing_client)
   - Open index.html
+
+# Contributer's Guide
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+# License
+
+This is available as open source under the terms of the [MIT License](https://choosealicense.com/licenses/mit/).
