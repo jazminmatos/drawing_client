@@ -12,15 +12,12 @@ class Drawing {
         this.user_id = user_id;
 
         this.drawingElement = document.createElement("div");
-        // this.drawingElement.id = `drawing-${this.id}`;
         this.drawingElement.addEventListener("click", this.convertImgDataToDrawing);
 
         Drawing.all.push(this);
     }
 
     drawingHTML() {
-        //Drawing.userDrawingList.innerHTML = ''
-        //return this.drawingElement
         this.drawingElement.innerHTML += `
             <button id="${this.id}" class="drawing buttons">See drawing ${this.id}</button>
         `

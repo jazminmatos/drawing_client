@@ -77,5 +77,3 @@ Drawing.saveDrawingButton.addEventListener ("click", function(e) {
         window.alert("You cannot save the drawing without submitting a username...😅")
     }
 })
-
-// Need to figure out a way to have all of a user's drawings show up when a user submits username

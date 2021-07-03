@@ -45,7 +45,6 @@ class DrawingService {
             .then(drawing => {
                 const newDrawingInstance = new Drawing(drawing.id, drawing.image, drawing.user_id)
                 newDrawingInstance.putOnDom()
-                //debugger
                 // Search for user instance --> 
                 const user = User.all.find(user => user.id === userId)
                 // Push drawing instance --> 
