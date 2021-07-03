@@ -36,6 +36,7 @@ class User {
     }
 
     drawingHTML() {
+        Drawing.userDrawingList.innerHTML = ''
         const divs = this.drawings.map(function(drawing) {
             drawing.drawingElement.innerHTML = `<button id="${drawing.id}" class="drawing buttons">See drawing ${drawing.id}</button>`
             return drawing.drawingElement

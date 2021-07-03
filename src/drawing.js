@@ -19,6 +19,7 @@ class Drawing {
     }
 
     drawingHTML() {
+        Drawing.userDrawingList.innerHTML = ''
         //return this.drawingElement
         this.drawingElement.innerHTML += `
             <button id="${this.id}" class="drawing buttons">See drawing ${this.id}</button>
