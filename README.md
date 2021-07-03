@@ -5,7 +5,7 @@ This drawing web application allows you to pull up a reference image and draw. Y
 # Installation Instructions
 
 Clone the following repos:
-Frontend: [drawing_client]https://github.com/jazminmatos/drawing_client
+Frontend: [drawing_client](https://github.com/jazminmatos/drawing_client)
 
 Frontend: drawing_client (also in website URL input)
 
