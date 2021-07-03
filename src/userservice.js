@@ -15,7 +15,7 @@ class UserService {
                 // if inputValue exists in the backend
                 if (foundName != undefined) {
                     // create a new instance of the User in the frontend
-                    const newUsernameInstance = new User(foundName.id, foundName.username, foundName.drawings, foundName.drawings_ids)
+                    const newUsernameInstance = new User(foundName.id, foundName.username, foundName.drawings)
                     // append to DOM
                     newUsernameInstance.putOnDom()
                 // if inputValue does NOT exist in the backend
