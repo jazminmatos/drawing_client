@@ -36,16 +36,18 @@ class User {
         return this.userElement;
     }
 
-    putOnDom() {
+    drawingHTML() {
         let newDivs = this.drawings.map(function(drawing) {
             drawing.drawingElement.innerHTML = `<button id="${drawing.id}" class="drawing buttons">See drawing ${drawing.id}</button>`
             return drawing.drawingElement
         })
-        //const divs = this.drawings.map(drawing => drawing.drawingElement)
+        return newDivs
 
+    }
+
+    putOnDom() {
         User.usernameList.appendChild(this.userHTML());
-        debugger
-        newDivs.map(div => Drawing.userDrawingList.appendChild(div))
+        this.drawingHTML().map(d => Drawing.userDrawingList.appendChild(d))
         userId = this.id
     }
 }
