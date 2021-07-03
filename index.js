@@ -54,8 +54,7 @@ let userId = ""
 User.userSubmitButton.addEventListener ("click", function(e) {
     // Necessary to check User.all length b/c User.all array becomes empty on refresh
     // Also prevents unecessary fetch requests
-    const input = User.userInput.value
-    const userExists = User.all.find(userInstance => userInstance.username === input);
+    const userExists = User.all.find(userInstance => userInstance.username === User.userInput.value);
     
     if (User.all.length > 0 && userExists != undefined) {
         userExists.putOnDom()
