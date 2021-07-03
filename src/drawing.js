@@ -19,7 +19,7 @@ class Drawing {
     }
 
     drawingHTML() {
-        Drawing.userDrawingList.innerHTML = ''
+        //Drawing.userDrawingList.innerHTML = ''
         //return this.drawingElement
         this.drawingElement.innerHTML += `
             <button id="${this.id}" class="drawing buttons">See drawing ${this.id}</button>
@@ -42,8 +42,8 @@ class Drawing {
                 const imageData = drawingExists.image
                 Line.ctx.drawImage(imageData, 0, 0)
             } else {
+                // this should result in reconversion of image to canvas
                 drawingService.getDrawing(drawing_id)
-                    // this should result in reconversion of image to canvas
             }
         }
     }

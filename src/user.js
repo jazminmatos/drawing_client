@@ -15,17 +15,10 @@ class User {
         this.userElement.className = "user"
 
         User.all.push(this);
-        //this.drawings.map(drawing => Drawing.all.push(new Drawing(drawing.id, drawing.image, drawing.user_id)))
     }
 
     userHTML() {
         User.usernameList.innerHTML = ''
-        //const drawingButtons = this.drawings.map(drawing => drawing.drawingHTML)
-        // this.drawing.drawingElement.innerHTML += `
-        //     <li>
-        //         <button id="${this.drawing.id}" class="drawing buttons">See drawing ${this.drawing.id}</button>
-        //     </li>
-        // `
         this.userElement.innerHTML = `
             <br />
             <h3>Submit another user to see their drawings:</h3>
