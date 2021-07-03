@@ -28,9 +28,8 @@ class User {
         // `
         this.userElement.innerHTML = `
             <br />
-            <h3>Submit another user to switch users</h3>
-            <br /><br /><br />
-            <h3>${this.username} has drawn...</h3>
+            <h3>Submit another user to see their drawings:</h3>
+            <br />
         `
 
         return this.userElement;

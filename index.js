@@ -34,10 +34,15 @@ Line.lineButton.addEventListener("click", function(e) {
 const base_image_url = "http://localhost:8000";
 // create new instance using a URL
 const image = new ReferenceService(base_image_url);
-// allows user to fetch and display random image when button is clicked
-Reference.randomImageButton.addEventListener ("click", e =>
-    image.getImage()
-)
+// Populate Reference.all w/ image objects
+image.getImage()
+
+Reference.randomImageButton.addEventListener ("click", function(e) {
+    // Retrieve random number
+    function randomNumber() {return Math.floor(Math.random() * 17)} 
+    // Retrive obj from Reference.all using random number
+    Reference.all[randomNumber()].putOnDom()
+})
 
 // User class & UserService lass
 const base_rails_url = "http://127.0.0.1:3000"
