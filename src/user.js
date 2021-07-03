@@ -36,12 +36,11 @@ class User {
     }
 
     drawingHTML() {
-        let newDivs = this.drawings.map(function(drawing) {
+        const divs = this.drawings.map(function(drawing) {
             drawing.drawingElement.innerHTML = `<button id="${drawing.id}" class="drawing buttons">See drawing ${drawing.id}</button>`
             return drawing.drawingElement
         })
-        return newDivs
-
+        return divs
     }
 
     putOnDom() {
