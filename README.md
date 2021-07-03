@@ -4,8 +4,19 @@ This drawing web application allows you to pull up a reference image and draw. Y
 
 # Installation Instructions
 
-Clone the following repos:
+Clone the following repos and follow instructions:
 
-- Frontend: [drawing_client](https://github.com/jazminmatos/drawing_client)
 - Backend: [drawing_api](https://github.com/jazminmatos/drawing_api)
+  - Run bundle install
+  - Start the PG database server: /usr/local/opt/postgresql/bin/pg_ctl -D /usr/local/var/postgres -l logfile start
+  - Run rails db:create
+  - Run rails db:migrate
+  - Run rails s to start the Rails server
+  - PostgreSQL troubleshooting:
+    - Stop the PG database server: pg_ctl stop -D /usr/local/var/postgres -m fast
+    - See all the servers that are running: ps -ef | grep postgres
+    - Kill servers: brew services stop postgres
 - Additional JSON file: [images-db](https://github.com/jazminmatos/images-db)
+  - Start the json server: json-server --watch images.json --port 8000
+- Frontend: [drawing_client](https://github.com/jazminmatos/drawing_client)
+  - Open index.html
