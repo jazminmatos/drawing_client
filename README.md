@@ -1,4 +1,4 @@
-# drawing_client
+# Drawing App: drawing_client
 
 This drawing web application allows you to pull up a reference image and draw. You can then save that drawing after submitting a username. Upon saving an image, it creates a button that allows you to see the drawing that you created.
 
